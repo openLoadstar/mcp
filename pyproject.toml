@@ -18,7 +18,7 @@ dependencies = [
 loadstar-mcp = "loadstar_mcp.server:main"
 
 [project.urls]
-Repository = "https://github.com/aeolusk/loadstar_mcp"
+Repository = "https://github.com/openLoadstar/mcp"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/loadstar_mcp"]

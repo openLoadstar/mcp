@@ -14,7 +14,7 @@ pip install loadstar-mcp
 
 ## Prerequisites
 
-- [loadstar CLI](https://github.com/aeolusk/loadstar_cli) must be installed and accessible as `loadstar` in your PATH (or set `LOADSTAR_CLI_PATH`).
+- [loadstar CLI](https://github.com/openLoadstar/cli) must be installed and accessible as `loadstar` in your PATH (or set `LOADSTAR_CLI_PATH`).
 - Python 3.10+
 
 ## Usage
