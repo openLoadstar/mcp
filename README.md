@@ -2,6 +2,8 @@
 
 LOADSTAR MCP server — exposes LOADSTAR project management tools via the [Model Context Protocol](https://modelcontextprotocol.io).
 
+> 📌 New to LOADSTAR? See [openLoadstar](https://github.com/openLoadstar/openLoadstar) for an overview of the whole ecosystem.
+
 ## Installation
 
 ```bash
@@ -82,6 +84,19 @@ With environment variables:
 claude mcp add loadstar -e LOADSTAR_CLI_PATH=/usr/local/bin/loadstar \
   -e LOADSTAR_SPEC_PATH=/path/to/loadstar_SPEC -- uvx loadstar-mcp
 ```
+
+## Related Projects
+
+- 🌐 **[openLoadstar](https://github.com/openLoadstar/openLoadstar)** — Overview of the whole ecosystem
+- 📖 **[spec](https://github.com/openLoadstar/spec)** — LOADSTAR methodology specification
+- 🛠️ **[cli](https://github.com/openLoadstar/cli)** — Go-based CLI tool (required dependency)
+- 🖥️ **[ui](https://github.com/openLoadstar/ui)** — Spring Boot + React Explorer UI
+
+## Contributing & Security
+
+- 🤝 **Contributing**: [CONTRIBUTING.md](https://github.com/openLoadstar/openLoadstar/blob/main/CONTRIBUTING.md)
+- 🔒 **Security**: [SECURITY.md](https://github.com/openLoadstar/openLoadstar/blob/main/SECURITY.md) — please use GitHub Security Advisories
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/openLoadstar/openLoadstar/discussions)
 
 ## License
 
