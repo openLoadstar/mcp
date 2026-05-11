@@ -38,3 +38,10 @@ Thumbs.db
 htmlcov/
 .mypy_cache/
 .ruff_cache/
+
+# Runtime-generated logs (CLI internal)
+.loadstar/.clionly/LOG/
+
+# AI agent local config
+.claude/
+.serena/
