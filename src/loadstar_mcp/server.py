@@ -13,7 +13,7 @@ mcp = FastMCP(
         "Typical workflow: loadstar_show → loadstar_get_waypoint(address) → "
         "code tools (LSP/grep scoped to CODE_MAP.scope) → loadstar_log_add. "
         "Before starting work: ensure WayPoint STATUS is S_PRG. "
-        "After completing all TECH_SPEC items: set STATUS to S_STB."
+        "After completing all TODO TASK items: set STATUS to S_STB."
     ),
 )
 
@@ -27,7 +27,8 @@ def _err(e: Exception) -> str:
 @mcp.tool(
     description=(
         "Show all WayPoints with STATUS and LAST_MODIFIED. "
-        "filter: optional keyword (address fragment, summary text). "
+        "filter: optional keyword matched case-insensitively against the address only "
+        "(e.g. 'cli' matches 'W://root/cli/cmd_show'). "
         "project_path: absolute path to the project root (must contain .loadstar/)."
     )
 )
@@ -92,8 +93,9 @@ def loadstar_todo_history(project_path: str, map: str | None = None) -> str:
 @mcp.tool(
     description=(
         "Query the LOADSTAR activity log. "
-        "time_range: e.g. '7d', '2w', '2026-04-01..2026-04-30'. "
-        "filter: keyword for address or content. "
+        "time_range: 'Nd' for last N days or 'Nh' for last N hours (e.g. '7d', '3h'). "
+        "Omit for all entries. "
+        "filter: keyword matched against address, KIND, or content (case-insensitive). "
         "project_path: absolute path to the project root (must contain .loadstar/)."
     )
 )
@@ -117,8 +119,8 @@ def loadstar_log(
 @mcp.tool(
     description=(
         "Add a log entry to a WayPoint. "
-        "address: WayPoint address (e.g. 'W://root/feature'). "
-        "kind: entry type (e.g. 'NOTE', 'DECISION', 'BLOCKER', 'PROGRESS'). "
+        "address: WayPoint address (e.g. 'W://root/feature') or short ID (e.g. 'feature'). "
+        "kind: entry type, must be one of NOTE, DECISION, ISSUE, RESOLVED, PROGRESS, MODIFIED. "
         "content: log message text. "
         "project_path: absolute path to the project root (must contain .loadstar/)."
     )
@@ -163,10 +165,10 @@ def loadstar_question(
 @mcp.tool(
     description=(
         "Read a WayPoint by address. Returns full markdown: "
-        "IDENTITY, CONNECTIONS, CODE_MAP, TODO (TECH_SPEC checklist), ISSUE. "
+        "IDENTITY, CONNECTIONS, CODE_MAP, TODO (TASK / RECURRING checklist), ISSUE. "
         "Use CODE_MAP.scope directories to limit subsequent code searches (LSP/grep). "
         "WayPoint STATUS rules: set S_IDL→S_PRG before starting; "
-        "set S_PRG→S_STB after all TECH_SPEC [ ] items are [x]. "
+        "set S_PRG→S_STB after all TODO TASK [ ] items are [x]. "
         "address: e.g. 'W://root/feature'. "
         "project_path: absolute path to the project root (must contain .loadstar/)."
     )

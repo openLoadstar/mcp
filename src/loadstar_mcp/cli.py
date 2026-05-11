@@ -23,6 +23,7 @@ def run_cli(args: list[str], project_path: Path) -> str:
             cwd=str(project_path),
             capture_output=True,
             text=True,
+            encoding="utf-8",
             timeout=_TIMEOUT,
         )
     except FileNotFoundError:
