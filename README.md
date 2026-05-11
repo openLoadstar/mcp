@@ -21,6 +21,8 @@ pip install loadstar-mcp
 
 ## Usage
 
+LOADSTAR projects use three element types: **Map** (`M://`) for hierarchy, **WayPoint** (`W://`) for execution units with GOAL/TODO, and **Data WayPoint** (`D://`) for data-artifact metadata. Each WayPoint and Map carries a **GOAL** slot stating the intent it fulfils.
+
 Every tool (except `loadstar_get_spec`) requires **`project_path`**: the absolute path to a project root that contains a `.loadstar/` directory.
 
 ```
