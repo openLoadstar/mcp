@@ -1,5 +1,7 @@
 # loadstar-mcp
 
+> ⚠️ **Direction pending for LOADSTAR 2.0.** The previous implementation has been removed; how (or whether) this MCP server is rebuilt for LOADSTAR 2.0 is still to be decided. This repository is kept as a placeholder until that review happens.
+
 LOADSTAR MCP server — exposes LOADSTAR project management tools via the [Model Context Protocol](https://modelcontextprotocol.io).
 
 > 📌 New to LOADSTAR? See [openLoadstar](https://github.com/openLoadstar/openLoadstar) for an overview of the whole ecosystem.
